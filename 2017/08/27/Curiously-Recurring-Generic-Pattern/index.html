@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Curiously-Recurring Generic Pattern (CRGP) 是指說符合以下形式的generic寫法：
+12345class Generic&amp;lt;T&amp;gt; &amp;#123;&amp;#125;  class Derived extends Generic&amp;lt;Derived&amp;gt;">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Joshua Sun">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Curiously-Recurring Generic Pattern"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Joshua Sun"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Curiously-Recurring Generic Pattern - Joshua Sun</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/JxSun">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Curiously-Recurring Generic Pattern</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-08-27
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Java/">#Java</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Curiously-Recurring Generic Pattern (CRGP) 是指說符合以下形式的generic寫法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Generic</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line">&#125;</div><div class="line">  </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Derived</span> <span class="keyword">extends</span> <span class="title">Generic</span>&lt;<span class="title">Derived</span>&gt; </span>&#123; <span class="comment">// CRGP</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其實前陣子在工作中有用過一次這個寫法，但這次才知道這個寫法有個專屬的名字。它之所以叫做curiously-recurring，是因為Generic<derived>的type parameter就是要繼承Generic<t>的Derived class本身，這個形式看起來有點怪；也因為Derived class是把自己帶入為type parameter，所以就有recursive的味道。</t></derived></p>
+<p>那為什麼會用到這個寫法呢？以我自己最近遇到的問題來說，我需要為幾個API clients設計它們各自的Builder class，像是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// FooApiClient.java</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FooApiClient</span> </span>&#123;</div><div class="line">    <span class="comment">// FooApiClient implementation</span></div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Builder</span> </span>&#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> Builder <span class="title">setX</span><span class="params">(String x)</span> </span>&#123;</div><div class="line">            <span class="comment">// Implementation </span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">        &#125;</div><div class="line">  </div><div class="line">        <span class="function"><span class="keyword">public</span> FooApiClient <span class="title">build</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="comment">// Implementation</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">new</span> FooApiClient(<span class="comment">/* parameters */</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">  </div><div class="line"><span class="comment">// BarApiClient.java</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BarApiClient</span> </span>&#123;</div><div class="line">    <span class="comment">// BarApiClient implementation</span></div><div class="line">  </div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Builder</span> </span>&#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> Builder <span class="title">setX</span><span class="params">(String x)</span> </span>&#123;</div><div class="line">            <span class="comment">// Implementation </span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">        &#125;</div><div class="line">  </div><div class="line">        <span class="function"><span class="keyword">public</span> BarApiClient <span class="title">build</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="comment">// Implementation</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">new</span> BarApiClient(<span class="comment">/* parameters */</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>所以當我要建立FooApiClient或BarApiClient時，就可以很直覺地透過它們的Builder建立：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Create FooApiClient</span></div><div class="line">FooApiClient client = <span class="keyword">new</span> FooApiClient.Builder()</div><div class="line">                .setX(<span class="string">"Hello"</span>)</div><div class="line">                .build();</div></pre></td></tr></table></figure>
+<p>但實際上，這些Builders建立FooApiClient和BarApiClient所需的設定方式是差不多的，在這些ApiClient裡還保持著各自的Builder的話就違反了DRY原則。其中一個解決方法就是把FooApiClient和BarApiClient共用的邏輯和Builder classes都提取到一個BaseApiClient中：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaseApiClient</span> </span>&#123;</div><div class="line">    <span class="comment">// Common implementation</span></div><div class="line">  </div><div class="line">    <span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Builder</span> </span>&#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> Builder <span class="title">setX</span><span class="params">(String x)</span> </span>&#123;  <span class="comment">// —— (1)</span></div><div class="line">            <span class="comment">// Implementation</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">        &#125;</div><div class="line">  </div><div class="line">        <span class="function"><span class="keyword">public</span> BaseApiClient <span class="title">build</span><span class="params">()</span> </span>&#123;  <span class="comment">// —— (2)</span></div><div class="line">            <span class="comment">// Implementation</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">new</span> BaseApiClient(<span class="comment">/* parameters */</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FooApiClient</span> <span class="keyword">extends</span> <span class="title">BaseApiClient</span> </span>&#123;</div><div class="line">    <span class="comment">// Implementation</span></div><div class="line">   </div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Builder</span> <span class="keyword">extends</span> <span class="title">BaseApiClient</span>.<span class="title">Builder</span> </span>&#123;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>不過一開始這樣寫會有兩個明顯的問題，第一是(1)所指的地方，setX()回傳的是BaseApiClient.Builder，所以當使用FooApiClient.Builder做鏈式呼叫時，最後就會呼叫到(2)所指的BaseApiClient.Builder#build()，因為它回傳的是BaseApiClient，還必須透過type casting才能真正當作FooApiClient使用。</p>
+<p>接下來我們可以開始引入generic，來攜帶FooApiClient的型態訊息到BaseApiClient.Builder中：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaseApiClient</span> </span>&#123;</div><div class="line">    <span class="comment">// Common implementation</span></div><div class="line">  </div><div class="line">    <span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Builder</span>&lt;<span class="title">T</span> <span class="keyword">extends</span> <span class="title">BaseApiClient</span>, <span class="title">R</span> <span class="keyword">extends</span> <span class="title">Builder</span>&lt;<span class="title">T</span>, <span class="title">R</span>&gt;&gt; </span>&#123;</div><div class="line">        <span class="meta">@SupressWarnings</span>(<span class="string">"unchecked"</span>)</div><div class="line">        <span class="function"><span class="keyword">public</span> R <span class="title">setX</span><span class="params">(String x)</span> </span>&#123;  <span class="comment">// —— (1)</span></div><div class="line">            <span class="comment">// Implementation</span></div><div class="line">            <span class="keyword">return</span> (R) <span class="keyword">this</span>;</div><div class="line">        &#125;</div><div class="line">  </div><div class="line">        <span class="function"><span class="keyword">public</span> T <span class="title">build</span><span class="params">()</span> </span>&#123;  <span class="comment">// —— (2)</span></div><div class="line">            <span class="comment">// Implementation</span></div><div class="line">            <span class="keyword">return</span> buildApiClient(<span class="comment">/* parameters */</span>)</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> T <span class="title">buildApiClient</span><span class="params">(<span class="comment">/* parameters */</span>)</span></span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FooApiClient</span> <span class="keyword">extends</span> <span class="title">BaseApiClient</span> </span>&#123;</div><div class="line">    <span class="comment">// Implementation</span></div><div class="line">     </div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Builder</span> <span class="keyword">extends</span> <span class="title">BaseApiClient</span>.<span class="title">Builder</span>&lt;<span class="title">FooApiClient</span>, <span class="title">Builder</span>&gt; </span>&#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">protected</span> FooApiClient <span class="title">buildApiClient</span><span class="params">(<span class="comment">/* parameters */</span>)</span> </span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">new</span> FooApiClient(<span class="comment">/* parameters */</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>因為我們希望在執行build()時，能夠直接取得FooApiClient型別的回傳值，勢必需要能夠讓derived class把正確的型別訊息傳入BaseApiClient.Builder中，所以在此引入了一個type parameter T來記錄型別資訊。接下來，為了處理上述的問題(1)，我們要能夠讓setX()回傳適當的Builder子類別，也就是FooApiClient.Builder呼叫setX()的時候，就要能得到FooApiClient.Builder型別的回傳值；BarApiClient.Builder呼叫setX()的時候，就要能得到BarApiClient.Builder型別的回傳值。故此，我們也需要把FooApiClient.Builder等子類別的型別傳入，這樣我們才有回傳正確型別的資訊。所以BaseApiClient.Builder應該要有兩個type parameters，而其中第二個type parameter R被限制為BaseApiClient.Build的子類別。為了保持型別資訊，R要完整地寫成：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Builder</span>&lt;<span class="title">T</span> <span class="keyword">extends</span> <span class="title">BaseApiClient</span>, <span class="title">R</span> <span class="keyword">extends</span> <span class="title">Builder</span>&lt;<span class="title">T</span>, <span class="title">R</span>&gt;&gt;</span></div></pre></td></tr></table></figure>
+<p>至此，CRGP形式就出現了。根據這樣的邏輯，FooApiClient.Builder在宣告的時候必須要把FooApiClient和自身的型別訊息傳入base class的type parameters，所以也同樣呈現出了CRGP的形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Builder</span> <span class="keyword">extends</span> <span class="title">BaseApiClient</span>.<span class="title">Builder</span>&lt;<span class="title">FooApiClient</span>, <span class="title">Builder</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1] <a href="http://www.artima.com/weblogs/viewpost.jsp?thread=133275" target="_blank" rel="external">Curiously Recurring Generic Pattern</a></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/JxSun" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 Joshua Sun<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
